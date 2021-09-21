@@ -6,12 +6,12 @@ class Output implements Command{
     message = message_;
   }
   
-  void show(){
+  void showResult(){
     println(message);
   }
   
   void display(){
-    fill(random(100,255), random(100,255), random(100,255));
+    fill(0,200,200);
     stroke(1);
     rect(x,y,w,h);
     fill(0);

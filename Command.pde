@@ -6,6 +6,6 @@ interface Command{
   //int getY(){
   //  return y;
   //}
-  void show();
+  void showResult();
   //void display();
 }

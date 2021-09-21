@@ -16,7 +16,7 @@ class Operator{
     else if(operator == "<"){
       return number1 < number2;
     }
-    else if(operator == "="){
+    else if(operator == "=="){
       return number1 == number2;
     }
     return false;

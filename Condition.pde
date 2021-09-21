@@ -4,26 +4,26 @@ class Condition implements Command{
   Command rightChild;
   
   // if-else
-  Condition(Operator operator_, Command leftChild_, Command rightChild_){
-    operator = operator_;
-    leftChild = leftChild_;
-    rightChild = rightChild_;
+  //Condition(Operator operator_, Command leftChild_, Command rightChild_){
+  //  operator = operator_;
+  //  leftChild = leftChild_;
+  //  rightChild = rightChild_;
     
-  }
+  //}
   // if
   Condition(Operator operator_, Command leftChild_){
     operator = operator_;
     leftChild = leftChild_;
   }
 
-  void show(){
+  void showResult(){
     if(operator.calculate()){
-      leftChild.show();
+      leftChild.showResult();
       return;
     }
     if(!(operator.calculate())){
       try{
-        rightChild.show();
+        rightChild.showResult();
         return;
       }
       catch(NullPointerException e){
@@ -33,7 +33,7 @@ class Condition implements Command{
   }
   
   void display(){
-    fill(random(100,255), random(100,255), random(100,255));
+    fill(230,0,0);
     stroke(1);
     rect(x,y,w,h);
     fill(0);

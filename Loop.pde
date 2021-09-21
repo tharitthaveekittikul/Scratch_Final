@@ -7,14 +7,14 @@ class Loop implements Command{
     command = command_;
   }
   
-  void show(){
+  void showResult(){
     for(int i = 0; i < n ; i++){
-      command.show();
+      command.showResult();
     }
   }
   
   void display(){
-    fill(random(100,255), random(100,255), random(100,255));
+    fill(0,200,0);
     stroke(1);
     rect(x,y,w,h);
     fill(0);

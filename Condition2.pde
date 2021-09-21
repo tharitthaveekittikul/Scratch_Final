@@ -6,19 +6,17 @@ class Condition2 implements Command{
   Condition2(Operator operator_, Command leftChild_, Command rightChild_){
     operator = operator_;
     leftChild = leftChild_;
-    rightChild = rightChild_;
-    //rect
-   
+    rightChild = rightChild_;   
   }
 
-  void show(){
+  void showResult(){
     if(operator.calculate()){
-      leftChild.show();
+      leftChild.showResult();
       return;
     }
     if(!(operator.calculate())){
       try{
-        rightChild.show();
+        rightChild.showResult();
         return;
       }
       catch(NullPointerException e){
