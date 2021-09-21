@@ -16,20 +16,20 @@ void setup(){
   
   //Variable var = new Variable();
   //-----------if-else and loop and if-then-----------------
-  Operator op = new Operator(4,">",2);
-  Operator op2 = new Operator(5,">",2);
-  Output out = new Output("Right");
-  Output out2 = new Output("Wrong!");
-  Condition con2 = new Condition(op2,out);
-  Loop loop = new Loop(2,con2);
-  Condition con = new Condition(op,loop,out2);
+  //Operator op = new Operator(4,">",2);
+  //Operator op2 = new Operator(5,">",2);
+  //Output out = new Output("Right");
+  //Output out2 = new Output("Wrong!");
+  //Condition con2 = new Condition(op2,out);
+  //Loop loop = new Loop(2,con2);
+  //Condition con = new Condition(op,loop,out2);
   
-  con.show();
-  con.display();
-  loop.display();
-  con2.display();
-  out.display();
-  out2.display();
+  //con.show();
+  //con.display();
+  //loop.display();
+  //con2.display();
+  //out.display();
+  //out2.display();
   
   //-----------loop-----------------
   //Output out = new Output("Hi");
@@ -49,17 +49,17 @@ void setup(){
   //out2.display();   
   
   //-----------nested if---------------
-  //Operator op = new Operator(5,">",6);
-  //Operator op2 = new Operator(3,"<",4);
-  //Output out = new Output("True");
-  //Output out2 = new Output("False");
-  //Condition con2 = new Condition(op2,out);
-  //Condition con = new Condition(op,con2,out2);
+  Operator op = new Operator(5,"<",6);
+  Operator op2 = new Operator(3,"<",4);
+  Output out = new Output("True");
+  Output out2 = new Output("False");
+  Condition con2 = new Condition(op2,out);
+  Condition con = new Condition(op,con2,out2);
   
-  //con.show();
-  //con.display();
-  //con2.display();
-  //out.display();
-  //out2.display();
+  con.show();
+  con.display();
+  con2.display();
+  out.display();
+  out2.display();
 
 }

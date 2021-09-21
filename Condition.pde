@@ -17,11 +17,11 @@ class Condition implements Command{
   }
 
   void show(){
-    if(this.operator.calculate()){
+    if(operator.calculate()){
       leftChild.show();
       return;
     }
-    if(!(this.operator.calculate())){
+    if(!(operator.calculate())){
       try{
         rightChild.show();
         return;
