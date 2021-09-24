@@ -11,4 +11,8 @@ class Variable implements Command{
   void showResult(){
     
   }
+  
+  void display(){
+    
+  }
 }

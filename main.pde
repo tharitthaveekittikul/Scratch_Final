@@ -3,23 +3,29 @@ int y = 10;
 int w = 200;
 int h = 40;
 
-StartButton start;
-SetButton set;
+Button start;
+Button set;
+
+TextBox name;
+TextBox value;
+
 
 Character cat;
 
 void setup(){
   size(800,800);
   
-  //------------Start Button------------
-  start = new StartButton(width-150,30,100,50);
-  
-  //------------Set Button--------------
-  set = new SetButton(300,150,100,50);
+  //------------Button------------
+  start = new Button("Start",width-150,30,100,50);
+  set = new Button("Set",300,150,100,50);
+  //------------TextBox--------------
+  name = new TextBox(10,150,120,50);
+  value = new TextBox(120,150,170,50);
 
   //------------Character---------------
   cat = new Character();
   //Variable var = new Variable();
+  
   //-----------if-else and loop and if-then-----------------
   //Operator op = new Operator(4,">",2);
   //Operator op2 = new Operator(5,">",2);
@@ -40,6 +46,8 @@ void draw(){
   background(175);
   start.display();
   set.display();
+  name.draw();
+  value.draw();
   runCat();
   
   
