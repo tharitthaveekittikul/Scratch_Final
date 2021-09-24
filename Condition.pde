@@ -2,7 +2,7 @@ class Condition implements Command{
   Operator operator;
   Command leftChild;
   Command rightChild;
-  int x = 20, y = 90, w = 300, h = 50;
+  int x = 10, y = 90, w = 300, h = 50;
   TextBox name;
   TextBox op;
   TextBox value;

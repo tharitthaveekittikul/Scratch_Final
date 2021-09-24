@@ -5,6 +5,7 @@ TextBox name;
 TextBox value;
 
 Condition con;
+Loop loop;
 CharacterPicture cat;
 
 void setup(){
@@ -36,6 +37,7 @@ void setup(){
   //out.display(); 
   
   con = new Condition(new Operator(4,">",2),new Output("True"));
+  loop = new Loop(2,new Output("Hi"));
 }
 void draw(){
   background(175);
@@ -45,11 +47,14 @@ void draw(){
   name.draw();
   value.draw();
   con.display();
+  loop.display();
   runCat();
 }
 
-void mouseClicked(){    
-  start.pressed();
+void mouseClicked(){   
+  if(start.pressed()){
+    cat.move();
+  }
   set.pressed();
 }
 
