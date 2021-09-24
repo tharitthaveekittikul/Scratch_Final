@@ -29,4 +29,12 @@ class Loop implements Command{
     //y = y + h;
     //println(y);
   }
+  
+  boolean contains(){
+    if(mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h){
+      println("in loop");
+      return true;
+    }
+    return false;
+  }
 }

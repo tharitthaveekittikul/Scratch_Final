@@ -12,8 +12,8 @@ class Condition implements Command{
   //  operator = operator_;
   //  leftChild = leftChild_;
   //  rightChild = rightChild_;
-    
   //}
+  
   // if
   Condition(Operator operator_, Command leftChild_){
     operator = operator_;
@@ -61,6 +61,14 @@ class Condition implements Command{
     op.draw();
     value.draw();
     
+  }
+  
+  boolean contains(){
+    if(mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h){
+      println("in condition");
+      return true;
+    }
+    return false;
   }
   
   //int position(){

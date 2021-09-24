@@ -23,13 +23,13 @@ class Button{
   boolean pressed(){
     if(name == "Start"){
       if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h){
-        println(name);
+        //println(name);
         return true;
       }
     }
     if(name == "Set"){
       if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h){
-        println(name); 
+        //println(name); 
         return true;
       }
     }

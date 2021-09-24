@@ -16,7 +16,7 @@ class TextBox{
   void draw(){
     drawBox();
     drawText();
-    getUserInput();
+    getUserInput ();
   }
   
   void drawBox(){
@@ -64,5 +64,13 @@ class TextBox{
   
   boolean hovering(){ //find mouse
     return mouseX >= x && mouseX <= x + boxWidth && mouseY >= y && mouseY <= y + boxHeight;
+  }
+  
+  String getValue(){
+    return textValue;
+  }
+  
+  void setValue(String text){
+    textValue = text;      
   }
 }

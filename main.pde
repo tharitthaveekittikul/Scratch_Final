@@ -1,3 +1,7 @@
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
 Button start;
 Button set;
 
@@ -7,6 +11,8 @@ TextBox value;
 Condition con;
 Loop loop;
 CharacterPicture cat;
+
+Variable variables = new Variable();
 
 void setup(){
   size(1000,900);
@@ -30,18 +36,32 @@ void setup(){
   //Condition con2 = new Condition(op2,out);
   //Loop loop = new Loop(2,con2);
   //Condition con = new Condition(op,loop);
-  
+
   //con.showResult();
   //con.display();
   //loop.display();
   //con2.display();
   //out.display(); 
-  
+
   con = new Condition(new Operator(4,">",2),new Output("True"));
   loop = new Loop(2,new Output("Hi"));
+  //List<Command> commands = new ArrayList();
+
+  //variables.put("x",50);
+  //variables.put("y",20.0);
+  //variables.put("z","PMO");
+
+  //commands.add(new Condition(new Operator((double)((Integer) variables.getValue("x")), ">",(double) ((float)variables.getValue("y"))),new Output(variables.getValue("z").toString())));
+
+  //commands.add(new Output(variables.getValue("x").toString()));
+
+  //for (Command command: commands) {
+  //  command.showResult();
+  //}
 }
 void draw(){
   background(175);
+  line(0,790,width,790); // floor
   textShow();
   start.display();
   set.display();
@@ -49,15 +69,29 @@ void draw(){
   value.draw();
   con.display();
   loop.display();
+  cat.displayMove();
   showCoordinates();
   runCat();
 }
 
-void mouseClicked(){   
+void mouseClicked(){
+
   if(start.pressed()){
     cat.move();
   }
-  set.pressed();
+
+  if(set.pressed()){
+    if(name.getValue() != "" && value.getValue() != ""){
+      variables.put(name.getValue(),value.getValue());
+      print(variables.getValue(name.getValue()));
+      name.setValue("");
+      value.setValue("");
+    }
+  }
+  
+  
+  con.contains();
+  loop.contains();
 }
 
 void runCat(){

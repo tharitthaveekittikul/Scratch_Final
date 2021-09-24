@@ -5,7 +5,7 @@ class Variable implements Command{
   Map variable;
   
   Variable(){
-    variable = new HashMap<String, Double>();
+    variable = new HashMap<String, Object>();
   }
   
   void showResult(){
@@ -14,5 +14,13 @@ class Variable implements Command{
   
   void display(){
     
+  }
+  
+  void put(String name, Object value){
+    variable.put(name,value);
+  }
+  
+  Object getValue(String name){
+    return variable.get(name);
   }
 }

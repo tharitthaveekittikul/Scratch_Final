@@ -7,5 +7,6 @@ interface Command{
   //  return y;
   //}
   void showResult();
-  //void display();
+  void display();
+  
 }
