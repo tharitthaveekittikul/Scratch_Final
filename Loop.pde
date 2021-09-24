@@ -1,5 +1,6 @@
 class Loop implements Command{
   int n;
+  int x,y,w,h;
   Command command;
   
   Loop(int n_, Command command_){

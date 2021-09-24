@@ -1,15 +1,16 @@
 class TextBox{
-  int x, y, boxWidth, boxHeight, textLimit = 20;
+  int x, y, boxWidth, boxHeight, textLimit;
   float currentValue, keyCounter, previousKeyCounter;
   String textValue = "";
   char keyInput, c;
   boolean keyReleased;
   
-  TextBox(int x_, int y_, int boxWidth_,int boxHeight_){
+  TextBox(int x_, int y_, int boxWidth_,int boxHeight_, int textLimit_){
     x = x_;
     y = y_;
     boxWidth = boxWidth_;
     boxHeight = boxHeight_;
+    textLimit = textLimit_;
   }
   
   void draw(){
@@ -19,7 +20,7 @@ class TextBox{
   }
   
   void drawBox(){
-    stroke(205);
+    stroke(1);
     fill(205);
     rect(x,y,boxWidth,boxHeight);
   }

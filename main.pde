@@ -1,29 +1,24 @@
-int x = (800/2) - 100;
-int y = 10;
-int w = 200;
-int h = 40;
-
 Button start;
 Button set;
 
 TextBox name;
 TextBox value;
 
-
-Character cat;
+Condition con;
+CharacterPicture cat;
 
 void setup(){
-  size(800,800);
+  size(1000,900);
   
   //------------Button------------
-  start = new Button("Start",width-150,30,100,50);
-  set = new Button("Set",300,150,100,50);
+  start = new Button("Start",width-150,30,100,30);
+  set = new Button("Set",300,50,100,30);
   //------------TextBox--------------
-  name = new TextBox(10,150,120,50);
-  value = new TextBox(120,150,170,50);
+  name = new TextBox(10,50,130,30,10);  // x,y,w,h,textLimits
+  value = new TextBox(160,50,130,30,10);
 
   //------------Character---------------
-  cat = new Character();
+  cat = new CharacterPicture();
   //Variable var = new Variable();
   
   //-----------if-else and loop and if-then-----------------
@@ -40,17 +35,17 @@ void setup(){
   //con2.display();
   //out.display(); 
   
-  
+  con = new Condition(new Operator(4,">",2),new Output("True"));
 }
 void draw(){
   background(175);
+  textShow();
   start.display();
   set.display();
   name.draw();
   value.draw();
+  con.display();
   runCat();
-  
-  
 }
 
 void mouseClicked(){    
@@ -62,4 +57,13 @@ void runCat(){
   cat.display();
   cat.checkEdges();
   //cat.move();
+}
+
+void textShow(){
+  fill(0);
+  textSize(25);
+  text("Set Variable",100,20);
+  fill(0);
+  textSize(20);
+  text("=",143,60);
 }

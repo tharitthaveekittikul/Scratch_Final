@@ -14,20 +14,21 @@ class Button{
     fill(255);
     rect(x,y,w,h);
     fill(0);
+    textAlign(CENTER);
     textSize(20);
-    text(name,x+25,y+25);
+    text(name,x+50,y+20);
     
   }
   
   void pressed(){
     if(name == "Start"){
       if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h){
-        println("Start"); 
+        println(name); 
       }
     }
     if(name == "Set"){
       if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h){
-        println("Set"); 
+        println(name); 
       }
     }
   }  

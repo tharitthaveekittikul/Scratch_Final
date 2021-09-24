@@ -1,4 +1,4 @@
-class Character{
+class CharacterPicture{
   int x = 50; int y = height-250;
   PImage img = loadImage("cat.png");
   

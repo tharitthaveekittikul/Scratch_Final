@@ -1,6 +1,6 @@
 class Output implements Command{
   String message;
-  
+  int x,y,w,h;
   
   Output(String message_){
     message = message_;
