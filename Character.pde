@@ -5,6 +5,9 @@ class CharacterPicture{
   void display(){
     fill(175);
     image(img,x,y,150,150);
+    fill(0);
+    textSize(16);
+    text("x = " + x + " ,  y = " + y, x + 10,y - 10);
   }
   
   void move(){

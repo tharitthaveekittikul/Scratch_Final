@@ -14,6 +14,7 @@ void setup(){
   //------------Button------------
   start = new Button("Start",width-150,30,100,30);
   set = new Button("Set",300,50,100,30);
+  
   //------------TextBox--------------
   name = new TextBox(10,50,130,30,10);  // x,y,w,h,textLimits
   value = new TextBox(160,50,130,30,10);
@@ -48,6 +49,7 @@ void draw(){
   value.draw();
   con.display();
   loop.display();
+  showCoordinates();
   runCat();
 }
 
@@ -71,4 +73,10 @@ void textShow(){
   fill(0);
   textSize(20);
   text("=",143,60);
+}
+
+void showCoordinates(){
+  fill(0);
+  textSize(16);
+  text("x: " + mouseX + "   y = " + mouseY,width/2 - 80,height - 50);
 }
