@@ -11,6 +11,8 @@ TextBox value;
 Condition con;
 Loop loop;
 CharacterPicture cat;
+Motion move;
+ArrayList<Motion> moves;
 
 Variable variables = new Variable();
 
@@ -28,6 +30,8 @@ void setup(){
   //------------Character---------------
   cat = new CharacterPicture();
   //Variable var = new Variable();
+  move = new Motion("Move",10,210);
+  moves = new ArrayList<Motion>();
   
   //-----------if-else and loop and if-then-----------------
   //Operator op = new Operator(4,">",2);
@@ -69,7 +73,16 @@ void draw(){
   value.draw();
   con.display();
   loop.display();
-  cat.displayMove();
+  move.display();
+  try{
+    for(int i = 0; i < moves.size(); i++){
+      moves.get(i).display();
+      moves.get(i).drag();
+    }
+  }
+  catch(Exception e){
+  
+  }  
   showCoordinates();
   runCat();
 }
@@ -77,7 +90,7 @@ void draw(){
 void mouseClicked(){
 
   if(start.pressed()){
-    cat.move();
+    //cat.move();
   }
 
   if(set.pressed()){
@@ -89,9 +102,14 @@ void mouseClicked(){
     }
   }
   
+  if(move.contains()){
+    moves.add(new Motion("Move",660,120));
+  }
+  
   
   con.contains();
   loop.contains();
+  
 }
 
 void runCat(){

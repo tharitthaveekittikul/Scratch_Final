@@ -16,15 +16,6 @@ class CharacterPicture{
     x = x + 10;
   }
   
-  void displayMove(){
-    fill(155,155,155);
-    stroke(1);
-    rect(10,210,120,50);
-    fill(0);
-    textSize(20);
-    text("Move = 10" ,10+10,210+25);
-  }
-  
   void checkEdges(){
     if(x >= width){
       x = 0;
