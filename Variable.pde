@@ -21,6 +21,9 @@ class Variable implements Command{
   }
   
   Object getValue(String name){
+    fill(0);
+    textSize(20);
+    text(name + " = " + variable.get(name),10,470);
     return variable.get(name);
   }
 }

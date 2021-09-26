@@ -1,6 +1,13 @@
 class CharacterPicture{
-  int x = 50; int y = height-250; int w = 150, h = 150;
-  PImage img = loadImage("cat.png");
+  int x,y;
+  int w = 150, h = 150;
+  PImage img;
+  
+  CharacterPicture(){
+    img = loadImage("cat.png");
+    x = 50;
+    y = height-250;
+  }
   
   void display(){
     fill(175);
@@ -12,7 +19,7 @@ class CharacterPicture{
     
   }
   
-  void move(){
+  void setMove(){
     x = x + 10;
   }
   
@@ -22,14 +29,16 @@ class CharacterPicture{
     }
   }
   
-  void contains(){
+  boolean contains(){
     if(mousePressed){
       if(mouseX >= x-w && mouseX <= x + w && mouseY >= y-h && mouseY <= y + h){
         x = mouseX;
         y = mouseY;
-        //return true;
+        return true;
       }
     }    
-    //return false;
+    return false;
   }
+  
+  
 }

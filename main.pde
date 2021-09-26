@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 Button start;
 Button set;
@@ -13,6 +14,8 @@ Loop loop;
 CharacterPicture cat;
 Motion move;
 ArrayList<Motion> moves;
+Iterator<Motion> it;
+List<Command> commands;
 
 Variable variables = new Variable();
 
@@ -32,24 +35,11 @@ void setup(){
   //Variable var = new Variable();
   move = new Motion("Move",10,210);
   moves = new ArrayList<Motion>();
-  
-  //-----------if-else and loop and if-then-----------------
-  //Operator op = new Operator(4,">",2);
-  //Operator op2 = new Operator(5,">",2);
-  //Output out = new Output("Right");
-  //Condition con2 = new Condition(op2,out);
-  //Loop loop = new Loop(2,con2);
-  //Condition con = new Condition(op,loop);
-
-  //con.showResult();
-  //con.display();
-  //loop.display();
-  //con2.display();
-  //out.display(); 
 
   con = new Condition(new Operator(4,">",2),new Output("True"));
   loop = new Loop(2,new Output("Hi"));
-  //List<Command> commands = new ArrayList();
+  commands = new ArrayList();
+  
 
   //variables.put("x",50);
   //variables.put("y",20.0);
@@ -66,6 +56,8 @@ void setup(){
 void draw(){
   background(175);
   line(0,790,width,790); // floor
+  line(0,550,width,550);
+  line(width/2,0,width/2,550);
   textShow();
   start.display();
   set.display();
@@ -74,36 +66,49 @@ void draw(){
   con.display();
   loop.display();
   move.display();
-  try{
-    for(int i = 0; i < moves.size(); i++){
-      moves.get(i).display();
-      moves.get(i).drag();
-    }
-  }
-  catch(Exception e){
+  //it = moves.iterator();
+  //while(it.hasNext()){
+  //  Motion m = it.next();
+  //  commands.add(m);
+  //  m.display();
+  //  m.drag();
+  //}
   
-  }  
+  for(int i = 0; i < commands.size(); i++){
+    moves.get(i).display();
+    moves.get(i).drag();
+  }
+  
+  if(mousePressed){
+    if(set.pressed()){
+      if(name.getValue() != "" && value.getValue() != ""){
+        variables.put(name.getValue(),value.getValue());
+        print(variables.getValue(name.getValue()));
+        name.setValue("");
+        value.setValue("");     
+      }
+    }    
+  }
+  variables.getValue(name.getValue());
   showCoordinates();
   runCat();
+  
+  
 }
 
 void mouseClicked(){
 
   if(start.pressed()){
-    //cat.move();
-  }
-
-  if(set.pressed()){
-    if(name.getValue() != "" && value.getValue() != ""){
-      variables.put(name.getValue(),value.getValue());
-      print(variables.getValue(name.getValue()));
-      name.setValue("");
-      value.setValue("");
+    println("use this start");
+    for (Command command: commands) {
+      command.showResult();
     }
   }
-  
+
   if(move.contains()){
     moves.add(new Motion("Move",660,120));
+    commands.add(moves.get(moves.size() - 1));
+    
   }
   
   
@@ -115,7 +120,7 @@ void mouseClicked(){
 void runCat(){
   cat.display();
   cat.checkEdges();
-  //cat.move();
+  //cat.setMove();
 }
 
 void textShow(){
